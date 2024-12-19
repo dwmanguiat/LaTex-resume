@@ -1,0 +1,2 @@
+pylatex
+jinja2
