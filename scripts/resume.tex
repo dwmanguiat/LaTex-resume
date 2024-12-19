@@ -1,5 +1,6 @@
 %-------------------------
 % Resume in Latex
+% Author : Jake Gutierrez
 % Based off of: https://github.com/sb2nov/resume
 % License : MIT
 %------------------------
@@ -126,7 +127,7 @@
       {PatientPoint $|$ AdTech} {Remote}
       \resumeItemListStart
         \resumeItem{Architect and engineer multi-tenant data pipelines from various sources (APIs, FTPs, Elastic Storage, Cloud Databases, Microservices, Streaming Services etc.) to a Snowflake data warehouse for data science, analysis and reporting.}
-        \resumeItem{Technical lead on a multi-year initiative which secured multiple industry accreditations for data pipelines and reports, enabling incremental revenue in the hundreds of millions dollars.}
+        \resumeItem \href{https://patientpoint.com/news/patientpoint_becomes_first_poc_publisher_to_earn_media_rating_council_accreditation/}{Technical lead on a multi-year initiative which secured multiple industry accreditations for data pipelines and reports, enabling incremental revenue in the hundreds of millions dollars.}
         \resumeItem{Advise on Enterprise Architecture Review Board as an advocate the for data team on enterprise-spanning initiatives.}
         \resumeItem{Develop and implement data warehouse architectural standards including ETL/ELT, Datalake and Snowflake.}
         \resumeItem{Act as technical lead for projects spanning engineering, data modeling, data science,  and visualization disciplines.}
@@ -166,29 +167,43 @@ infrastructure and applications.}
       {Sales Engineer Co-op} 
       %$|$ \emph{\small{\textmd{T-SQL, VB.net, Excel, PowerShell, Bash, Python}}}}
       {December 2014 -- March 2018}
-        {Melink Corporation $|$ Commercial Construction}{Milford, OH}  
-      \resumeSubHeadingListEnd
+      {Melink Corporation $|$ Commercial Construction}{Milford, OH}  
+      
+  \resumeSubHeadingListEnd
 
 %-----------EDUCATION-----------
 \section{Education}
   \resumeSubHeadingListStart
     \resumeSubheading
       {University of Cincinnati, Lindner College of Business}{Cincinnati, OH}
-      {Bachelor of Business Administration, Information Systems, Class of 2018}{}
+      {Bachelor of Business Administration, Information Systems, Class of 2018}
+
 
   \resumeSubHeadingListEnd
-
+  
+%        \begin{itemize}[leftmargin=0.15in, label={}]
+%         \small{\item{
+%             \textbf{\\Coursework}{: Natural Language Processing, Optimization Models, Computer Vision, Data Mining, Neural Computation, Statistics, Product Design, Front and Back End Web Architecture} \\
+%             }}
+%         \end{itemize}
+%
 %-----------TECHNICAL SKILLS-----------
 \section{Technical Skills}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     \textbf{Databases:} Snowflake, Postgres, Redshift, SQL Server, Oracle, Synapse, MySQL \\
-     \textbf{Languages:} Various SQL dialects including SnowSQL and T-SQL, Python, JavaScript, C\#, Java \\
-     \textbf{Technologies:} Apache Airflow, Fivetran ETL, S3/Blob Storage, Git, GitHub CI/CD, Terraform, Kafka, Atlassian Tools \\
-     \textbf{Skills:} Data Warehousing, Inmon/Kimball Data Modeling, ETL/ELT Design, IoT Data, Cloud Architecture, Agile, Scrum, Project Management, Requirements Gathering, Technical Writing and Documentation \\
+     \textbf{Databases}{: Snowflake, Postgres, Redshift, SQL Server, Oracle, Synapse, MySQL} \\
+     \textbf{Languages}{: Various SQL dialects including SnowSQL and T-SQL, Python, JavaScript, C#, Java} \\
+     \textbf{Technologies}{: Apache Airflow, Fivetran ETL, S3/Blob Storage, Git, GitHub CI/CD, Terraform, Kafka, Atlassian Tools} \\
+     \textbf{Skills}{: Data Warehousing, Inmon/Kimball Data Modeling, ETL/ELT Design, IoT Data, Cloud Architecture, Agile, Scrum, Project Management, Requirements Gathering, Technical Writing & Doucmentation} \\
+
     }}
  \end{itemize}
-
+%-----------Footer-----------
+\iffalse
+\begin{center}
+    \textbf \tiny{References available upon request.} 
+\end{center}
+\fi
 
  %-----------PROJECTS-----------
 \iffalse
@@ -227,4 +242,24 @@ infrastructure and applications.}
 \fi
 
 
+%
+%-----------ACTIVITIES AND INTERESTS-----------
+% \section{Activities and Interests}
+%  \begin{itemize}[leftmargin=0.15in, label={}]
+%     \small{\item{
+%      \textbf{Snowboarding}{: Former president of The Ohio State Ski and Board Team. Freestyle instructor at Woodward Tahoe (Summer 2019).} \\
+%      \textbf{Misc}{: Music, Climbing, Animation, Mountain Biking, Backpacking (Completed 165 mile solo hike July 2019).}
+%     }}
+%  \end{itemize}
+
 \end{document}
+
+% -----------Multiple Positions Heading-----------
+%    \resumeSubSubheading
+%     {Software Engineer I}{Oct 2014 - Sep 2016}
+%     \resumeItemListStart
+%        \resumeItem{Apache Beam}
+%          {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines}
+%     \resumeItemListEnd
+%    \resumeSubHeadingListEnd
+%-------------------------------------------
