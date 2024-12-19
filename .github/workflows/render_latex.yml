@@ -21,8 +21,11 @@ jobs:
     - name: Install dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y texlive-latex-base texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra imagemagick ghostscript
+        sudo apt-get install -y texlive-latex-base texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra imagemagick
         pip install -r requirements.txt
+
+    - name: Verify ImageMagick installation
+      run: magick --version
 
     - name: Run render_latex.py
       run: python scripts/render_latex.py
