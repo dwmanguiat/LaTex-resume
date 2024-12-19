@@ -23,7 +23,4 @@ if __name__ == "__main__":
 
     render_latex_to_pdf(latex_file)
 
-    print(pdf_file)
-    print(png_file)
-
     convert_pdf_to_png(pdf_file, png_file)
