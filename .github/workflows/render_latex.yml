@@ -25,10 +25,10 @@ jobs:
         pip install -r requirements.txt
 
     - name: List /usr/bin directory
-      run: ls -la /usr/bin | grep magick
+      run: ls -la /usr/bin 
 
     - name: List /usr/local/bin directory
-      run: ls -la /usr/local/bin | grep magick
+      run: ls -la /usr/local/bin 
 
     - name: Verify ImageMagick installation
       run: magick --version
