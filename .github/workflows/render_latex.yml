@@ -25,6 +25,9 @@ jobs:
         sudo apt-get install -y texlive-latex-base texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra 
         pip install -r requirements.txt
 
+    - name: PATH
+      run: echo PATH
+
     - name: List /usr/bin directory
       run: ls -la /usr/bin 
 
