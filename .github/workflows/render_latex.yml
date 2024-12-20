@@ -25,6 +25,9 @@ jobs:
         sudo apt-get install -y texlive-latex-base texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra 
         pip install -r requirements.txt
 
+    - name: Create symbolic link for magick
+      run: sudo ln -s /usr/bin/magick /usr/local/bin/magick
+
     - name: PATH
       run: echo $PATH
 
