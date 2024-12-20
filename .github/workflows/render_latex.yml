@@ -32,7 +32,7 @@ jobs:
       run: ls -la /usr/local/bin 
 
     - name: Verify ImageMagick installation
-      run: magick --version
+      run: imagemagick --version
 
     - name: Run render_latex.py
       run: python scripts/render_latex.py
