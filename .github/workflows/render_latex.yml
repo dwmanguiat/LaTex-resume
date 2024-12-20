@@ -26,7 +26,7 @@ jobs:
         pip install -r requirements.txt
 
     - name: PATH
-      run: echo PATH
+      run: echo $PATH
 
     - name: List /usr/bin directory
       run: ls -la /usr/bin 
