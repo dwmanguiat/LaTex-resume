@@ -23,9 +23,6 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y texlive-latex-base texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra imagemagick
         pip install -r requirements.txt
-        
-    - name: Check ImageMagick installation path
-      run: which magick
 
     - name: List /usr/bin directory
       run: ls -la /usr/bin | grep magick
