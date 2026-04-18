@@ -11,34 +11,20 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v5
       with:
         python-version: '3.x'
 
     - name: Install dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install imagemagick
-        sudo apt-get install -y -f texlive-latex-base texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra 
+        sudo apt-get install -y imagemagick texlive-latex-base texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra
         pip install -r requirements.txt
-
-    - name: Create symbolic link for magick
-      run: sudo ln -s /usr/bin/magick /usr/local/bin/magick
-
-    - name: PATH
-      run: echo $PATH
-
-    - name: List /usr/bin directory
-      run: ls -la /usr/bin 
-
-    - name: List /usr/local/bin directory
-      run: ls -la /usr/local/bin 
-
-    - name: Verify ImageMagick installation
-      run: magick --version
 
     - name: Run render_latex.py
       run: python scripts/render_latex.py
@@ -47,8 +33,7 @@ jobs:
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git add resume.pdf resume.png
-        git commit -m 'Add rendered PDF and PNG'
+        git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+        git add resume.pdf resume.jpg
+        git diff --staged --quiet || git commit -m 'Render resume PDF and JPG [skip ci]'
         git push
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
