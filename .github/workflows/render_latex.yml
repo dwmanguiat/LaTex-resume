@@ -26,7 +26,7 @@ jobs:
     - name: Install dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y imagemagick texlive-latex-base texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra
+        sudo apt-get install -y poppler-utils texlive-latex-base texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra
         pip install -r requirements.txt
 
     - name: Run render_latex.py
@@ -37,6 +37,6 @@ jobs:
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
         git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
-        git add resume.pdf resume.jpg
-        git diff --staged --quiet || git commit -m 'Render resume PDF and JPG [skip ci]'
+        git add resume.pdf resume.png
+        git diff --staged --quiet || git commit -m 'Render resume PDF and PNG [skip ci]'
         git push
