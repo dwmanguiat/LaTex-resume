@@ -6,24 +6,18 @@ This repository stores my LaTeX-authored resume. On every push to `master`, a Gi
 
 ## Workflow
 
-```
-┌─────────────────┐
-│  Edit resume.tex │
-└────────┬────────┘
-         │ git push → master
-         ▼
-┌─────────────────────────────────────────────────┐
-│              GitHub Actions                      │
-│                                                  │
-│  1. Install TeX Live + poppler-utils             │
-│  2. pdflatex resume.tex  →  resume.pdf           │
-│  3. pdftoppm resume.pdf  →  resume.png           │
-│  4. Commit & push rendered files [skip ci]       │
-└─────────────────────────────────────────────────┘
-         │
-         ▼
-┌──────────────────┐
-│  resume.pdf      │
-│  resume.png      │  ← committed back to master
-└──────────────────┘
+```mermaid
+flowchart TD
+    A([Edit resume.tex]) -->|git push to master| B
+
+    subgraph B[GitHub Actions]
+        direction TB
+        B1[Install TeX Live + poppler-utils]
+        B2[pdflatex resume.tex → resume.pdf]
+        B3[pdftoppm resume.pdf → resume.png]
+        B4[Commit & push rendered files]
+        B1 --> B2 --> B3 --> B4
+    end
+
+    B -->|bot commit with skip ci| C([resume.pdf + resume.png on master])
 ```
